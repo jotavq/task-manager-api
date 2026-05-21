@@ -1,16 +1,20 @@
 # Sistema de Postagens
 
-Projeto CRUD desenvolvido com Node.js, Express, Sequelize e MySQL.
+Sistema CRUD de tarefas desenvolvido com Node.js, Express, Sequelize, MySQL e Handlebars.
 
 ## Funcionalidades
 
-- Criar postagens
-- Listar postagens
-- Editar postagens
-- Excluir postagens
+- Criar tarefas
+- Editar tarefas
+- Excluir tarefas
+- Listar tarefas
+- Datas automáticas
+- Integração com MySQL
 
 ## Rotas
 
+| Método | Rota | Descrição |
+|---------|-------|------------|
 | GET | `/` | Lista todas as postagens |
 | GET | `/cadastro` | Exibe o formulário para criar uma nova postagem |
 | POST | `/add` | Cria uma nova postagem |
@@ -26,6 +30,7 @@ Projeto CRUD desenvolvido com Node.js, Express, Sequelize e MySQL.
 - Sequelize
 - MySQL
 - Handlebars
+- Dotenv
 
 ## Como executar
 
