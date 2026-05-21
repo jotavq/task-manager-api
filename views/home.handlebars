@@ -1,0 +1,21 @@
+<h1>Lista de postagens:</h1>
+<p>Caso deseja cadastrar uma nova postagem <a href="/cadastro">CLIQUE AQUI</a></p>
+<hr>
+{{#each posts}}
+
+    <small>
+        {{dataValues.createdAt}}
+    </small> 
+    <h1>
+        {{titulo}} 
+    </h1>
+    <p>
+        {{conteudo}}
+    </p>
+    <a href="/editar/{{id}}"><button type="button">Editar</button></a>
+    <form action="/deletar/{{id}}" method="POST" style="display:inline" onsubmit="return confirm('Tem certeza que deseja excluir esse post? Após a confirmação a ação não poderá ser desfeita.')">
+        <button type="submit">Excluir</button>
+    </form>
+    <hr>
+
+{{/each}}
