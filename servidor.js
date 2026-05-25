@@ -1,7 +1,6 @@
 import 'dotenv/config'
 import express from 'express'
 import { engine } from 'express-handlebars'
-import bodyParser from 'body-parser'
 import Post from './models/Post.js'
 
 const app = express()
@@ -12,20 +11,29 @@ const PORT = process.env.PORT || 3001
 
     app.engine('handlebars', engine({
         defaultLayout: 'main',
-            runtimeOptions: {
+        runtimeOptions: {
             allowProtoPropertiesByDefault: true,
             allowProtoMethodsByDefault: true,
+        },
+        helpers: {
+            formatarData(data) {
+                if (!data) return ''
+                const date = new Date(data)
+                return date.toLocaleString('pt-BR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                })
+            },
         },
     }))
 
     app.set('view engine', 'handlebars')
 
-    // body parser
-    
-    app.use(bodyParser.urlencoded({
-        extended: false
-    }))
-    app.use(bodyParser.json())
+    app.use(express.urlencoded({ extended: false }))
+    app.use(express.json())
 
 // Rotas
     app.get('/', (req, res) =>{

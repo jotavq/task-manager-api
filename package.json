@@ -1,22 +1,24 @@
 {
-  "name": "estudo",
+  "name": "task-manager",
   "version": "1.0.0",
-  "description": "",
-  "main": "adi.js",
+  "description": "Sistema CRUD de postagens com Node.js e MySQL",
+  "main": "servidor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node servidor.js",
     "dev": "node --watch servidor.js"
   },
-  "keywords": [],
+  "keywords": ["postagens", "crud", "express", "sequelize"],
   "author": "",
   "license": "ISC",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0 <23.0.0"
+  },
   "dependencies": {
-    "body-parser": "^2.2.2",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "express-handlebars": "^9.0.1",
+    "express-handlebars": "^7.1.3",
     "mysql2": "^3.22.3",
     "sequelize": "^6.37.8"
   }
